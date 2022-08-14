@@ -20,24 +20,10 @@ function init() {
 
 
   camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.25, 200);
-<<<<<<< HEAD
-  camera.position.set(- 6, 1.6, 5.4);
-=======
   camera.position.set(- 6, 5, 5.4);
->>>>>>> 9f29747 (Added subpages and navigation)
 
   scene = new THREE.Scene();
   scene.background = new THREE.Color(0xbfe3dd);
-
-<<<<<<< HEAD
-  floorMat = new THREE.MeshStandardMaterial({
-=======
-  floorMat = new THREE.MeshLambertMaterial({
->>>>>>> 9f29747 (Added subpages and navigation)
-    color: 0x888888,
-    roughness: 0.5,
-    metalness: 0.5
-  });
 
   const ambLight = new THREE.AmbientLight(0xe0e0e0, .5); // soft white light
   scene.add(ambLight);
@@ -56,19 +42,6 @@ function init() {
   dirLight.shadow.mapSize.height = 1024;
   scene.add(dirLight);
 
-<<<<<<< HEAD
-  const floorGeometry = new THREE.PlaneGeometry(20, 20);
-  const floorMesh = new THREE.Mesh(floorGeometry, floorMat);
-  floorMesh.receiveShadow = true;
-  floorMesh.rotation.x = - Math.PI / 2.0;
-  scene.add(floorMesh);
-=======
-  /*const floorGeometry = new THREE.PlaneGeometry(20, 20);
-  const floorMesh = new THREE.Mesh(floorGeometry, floorMat);
-  floorMesh.receiveShadow = true;
-  floorMesh.rotation.x = - Math.PI / 2.0;
-  scene.add(floorMesh);*/
->>>>>>> 9f29747 (Added subpages and navigation)
 
   const planeTex1 = new THREE.TextureLoader().load('textures/icon1.jpg');
   const planeTex2 = new THREE.TextureLoader().load('textures/icon2.jpg');
@@ -76,20 +49,11 @@ function init() {
   const planeTex4 = new THREE.TextureLoader().load('textures/icon4.jpg');
   const planeTex5 = new THREE.TextureLoader().load('textures/icon5.jpg');
 
-<<<<<<< HEAD
-  const planeMat1 = new THREE.MeshStandardMaterial({ map: planeTex1 });
-  const planeMat2 = new THREE.MeshStandardMaterial({ map: planeTex2 });
-  const planeMat3 = new THREE.MeshStandardMaterial({ map: planeTex3 });
-  const planeMat4 = new THREE.MeshStandardMaterial({ map: planeTex4 });
-  const planeMat5 = new THREE.MeshStandardMaterial({ map: planeTex5 });
-=======
   const planeMat1 = new THREE.MeshLambertMaterial({ map: planeTex1 });
   const planeMat2 = new THREE.MeshLambertMaterial({ map: planeTex2 });
   const planeMat3 = new THREE.MeshLambertMaterial({ map: planeTex3 });
   const planeMat4 = new THREE.MeshLambertMaterial({ map: planeTex4 });
   const planeMat5 = new THREE.MeshLambertMaterial({ map: planeTex5 });
->>>>>>> 9f29747 (Added subpages and navigation)
-
 
   planeGeo1 = new THREE.PlaneGeometry(1, 1);
   plane1 = new THREE.Mesh(planeGeo1, planeMat1);
@@ -98,10 +62,7 @@ function init() {
   plane1.position.set(1.5, 1.5, 1);
   plane1.lookAt(camera.position);
   pickableObjs.push(plane1);
-<<<<<<< HEAD
-=======
   plane1.name = "plane1";
->>>>>>> 9f29747 (Added subpages and navigation)
   scene.add(plane1);
 
   planeGeo2 = new THREE.PlaneGeometry(1, 1);
@@ -111,10 +72,7 @@ function init() {
   plane2.position.set(1.5, 1.5, -4);
   plane2.lookAt(camera.position);
   pickableObjs.push(plane2);
-<<<<<<< HEAD
-=======
   plane2.name = "plane2";
->>>>>>> 9f29747 (Added subpages and navigation)
   scene.add(plane2);
 
   planeGeo3 = new THREE.PlaneGeometry(1, 1);
@@ -124,10 +82,7 @@ function init() {
   plane3.position.set(-4, 1.5, 1);
   plane3.lookAt(camera.position);
   pickableObjs.push(plane3);
-<<<<<<< HEAD
-=======
   plane3.name = "plane3";
->>>>>>> 9f29747 (Added subpages and navigation)
   scene.add(plane3);
 
   planeGeo4 = new THREE.PlaneGeometry(1, 1);
@@ -137,10 +92,7 @@ function init() {
   plane4.position.set(-5.5, 1.5, -1.5);
   plane4.lookAt(camera.position);
   pickableObjs.push(plane4);
-<<<<<<< HEAD
-=======
   plane4.name = "plane4";
->>>>>>> 9f29747 (Added subpages and navigation)
   scene.add(plane4);
 
   planeGeo5 = new THREE.PlaneGeometry(1, 1);
@@ -150,10 +102,7 @@ function init() {
   plane5.position.set(-4, 1.5, -4);
   plane5.lookAt(camera.position);
   pickableObjs.push(plane5);
-<<<<<<< HEAD
-=======
   plane5.name = "plane5";
->>>>>>> 9f29747 (Added subpages and navigation)
   scene.add(plane5);
 
  //---ANTHONY PLEASE LOOK AT RGBE LOADER---///
@@ -184,11 +133,8 @@ function init() {
     animate();
 
   });
-
-<<<<<<< HEAD
   //} );
 
-=======
   loader.load('dchSite.gltf', function (gltf) {
     scene.add(gltf.scene);
     for(let i = 0; i < gltf.scene.children.length; i++){
@@ -202,7 +148,6 @@ function init() {
 
   //} );
 
->>>>>>> 9f29747 (Added subpages and navigation)
   renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -211,11 +156,7 @@ function init() {
   renderer.toneMappingExposure = .75;
   renderer.outputEncoding = THREE.sRGBEncoding;
   container.appendChild(renderer.domElement);
-<<<<<<< HEAD
   renderer.shadowMap.enabled = true;
-=======
-  //renderer.shadowMap.enabled = true;
->>>>>>> 9f29747 (Added subpages and navigation)
 
   controls = new THREE.OrbitControls(camera, renderer.domElement);
   // controls.addEventListener('change', animate); // use if there is no animation loop
@@ -254,11 +195,7 @@ function onPointerMove(event) {
 }
 
 function onDocumentMouseDown(event) {
-<<<<<<< HEAD
 
-}
-
-=======
   controls.autoRotate = false;
   if(INTERSECTED){
     console.log("clicked");
@@ -294,7 +231,6 @@ function onDocumentMouseDown(event) {
   }
 }
 
->>>>>>> 9f29747 (Added subpages and navigation)
 function animate() {
   requestAnimationFrame(animate);
   render();
@@ -307,30 +243,6 @@ function render() {
   raycaster.setFromCamera(pointer, camera);
   const intersects = raycaster.intersectObjects(pickableObjs, true);
   if (intersects.length > 0) {
-<<<<<<< HEAD
-    console.log(intersects);
-    // TODO: you probably just want the first object it hits
-    intersects.map(function(intersected) {
-      const intersectedMaterial = intersected.object.material;
-      intersectedMaterial.emissive.setHex(0x0000ff);
-    });
-  }
-
-  // TODO: reset the hex of the other planes
-
-  renderer.render(scene, camera);
-
-  /*  plane1.lookAt(camera.position);
-    plane2.lookAt(camera.position);
-    plane3.lookAt(camera.position);
-    plane4.lookAt(camera.position);
-    plane5.lookAt(camera.position);*/
-
-  // console.log(camera.position);
-}
-
-=======
-    //console.log(intersects);
     if(INTERSECTED != intersects[0].object) {
       const intersectedMaterial = intersects[0].object.material;
       intersectedMaterial.emissive.setHex(0x0000ff);
@@ -355,4 +267,4 @@ function render() {
 
   // console.log(camera.position);
 }
->>>>>>> 9f29747 (Added subpages and navigation)
+
